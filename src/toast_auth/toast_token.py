@@ -94,17 +94,3 @@ class ToastToken(Mapping):
     @token.setter
     def token(self, value):
         raise AttributeError("Cannot overwrite the Toast Token.")
-
-
-if __name__ == '__main__':
-    os.environ['TOAST_API_SERVER'] = 'https://ws-api.toasttab.com'
-    os.environ['TOAST_CLIENT_ID'] = '34L8fEsK3vVvURvvgv04Re2FELY4YRZp'
-    os.environ['TOAST_CLIENT_SECRET'] = 'vcCDXB9NfIagjA3T3TzolCZzpQ2k6CM3avP5g59Y9Ob1U0g09fD5bFa3Jqitl3-3'
-
-    os.environ['BUCKET_NAME'] = 'ziki-analytics-config'
-    os.environ['FILE_NAME'] = 'toast_token.json'
-
-    token = ToastToken(token_location='s3')
-
-    print(token._token)
-
