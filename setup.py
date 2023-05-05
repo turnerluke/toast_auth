@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='toast_auth',
-    version='0.1.0',
+    version='0.1.1',
     license='MIT',
     description='Class object to help facilitate authentication with Toast API.',
     url='https://github.com/turnerluke/toast_auth',
