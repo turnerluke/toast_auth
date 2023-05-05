@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='src',
+    name='toast_auth',
     version='0.1.0',
     license='MIT',
     description='A package that contains a class',
