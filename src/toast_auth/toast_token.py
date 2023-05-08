@@ -75,10 +75,13 @@ class ToastToken(Mapping):
                 "clientSecret": os.environ.get('TOAST_CLIENT_SECRET'),
                 "userAccessType": "TOAST_MACHINE_CLIENT"
             }
+
             headers = {"Content-Type": "application/json"}
             response = requests.post(url, json=payload, headers=headers)
 
             data = response.json()
+            if data['status'] == 401:
+                raise ValueError("Invalid Toast credentials.")
             token = data['token']['accessToken']
 
             expires = dt.datetime.now() + dt.timedelta(seconds=data['token']['expiresIn'])
